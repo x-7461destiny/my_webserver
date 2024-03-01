@@ -1,0 +1,15 @@
+# Ignore resource folder in root
+/root/resource/
+
+# Ignore test_pressure file
+test_pressure
+
+# Ignore log files starting with 2023 or 2024
+2023*
+2024*
+
+# Ignore txt files
+*.txt
+
+# Ignore server file
+server
