@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebServer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('./resources/background.jpg') center/cover no-repeat fixed;
+        }
+
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .glass-container {
+            background-color: rgba(255, 255, 255, 0.5); /* 半透明白色背景 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            text-align: center;
+        }
+
+        /* 过渡动画样式 */
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.5s;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+        form {
+            /* 添加你想要的CSS属性 */
+            margin: 10px;
+            padding: 10px;
+            border: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition name="fade">
+            <div class="glass-container" v-if="showGlass">
+                <font size="5"><strong>欢迎访问</strong></font>
+                <form action="0" method="post">
+                    <button type="submit">新用户</button>
+                </form>
+                <form action="1" method="post">
+                    <button type="submit">已有账号</button>
+                </form>
+            </div>
+        </transition>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showGlass: true,
+            },
+            methods: {
+                // 在这里添加需要的方法
+            }
+        });
+    </script>
+</body>
+</html>
